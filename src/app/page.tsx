@@ -12,6 +12,7 @@ import { ExpenseForm } from "@/components/expense-form";
 import { ExpenseRow } from "@/components/expense-row";
 import { ConfirmDialog } from "@/components/confirm-dialog";
 import { EmptyState } from "@/components/empty-state";
+import { ExportButton } from "@/components/export-button";
 import { CategoryPieChart } from "@/components/category-pie-chart";
 import { MonthlyBarChart } from "@/components/monthly-bar-chart";
 import {
@@ -95,14 +96,17 @@ export default function DashboardPage() {
             An overview of your spending activity and trends.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={openAddForm}
-          className="flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-700"
-        >
-          <Plus className="h-4 w-4" />
-          Add expense
-        </button>
+        <div className="flex items-center gap-3">
+          <ExportButton expenses={expenses} />
+          <button
+            type="button"
+            onClick={openAddForm}
+            className="flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-700"
+          >
+            <Plus className="h-4 w-4" />
+            Add expense
+          </button>
+        </div>
       </div>
 
       {!isLoaded ? (
