@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { ExpenseProvider } from "@/context/expense-context";
 import { ToastProvider } from "@/context/toast-context";
+import { CloudExportProvider } from "@/context/cloud-export-context";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,8 +34,10 @@ export default function RootLayout({
       >
         <ToastProvider>
           <ExpenseProvider>
-            <Navbar />
-            <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">{children}</main>
+            <CloudExportProvider>
+              <Navbar />
+              <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">{children}</main>
+            </CloudExportProvider>
           </ExpenseProvider>
         </ToastProvider>
       </body>
