@@ -8,7 +8,7 @@ import { Modal } from "@/components/modal";
 import { ExpenseForm } from "@/components/expense-form";
 import { ExpenseList } from "@/components/expense-list";
 import { ConfirmDialog } from "@/components/confirm-dialog";
-import { ExportButton } from "@/components/export-button";
+import { ExportTriggerButton } from "@/components/export/export-trigger-button";
 import { FilterBar, type ExpenseFilters } from "@/components/filter-bar";
 import { ExpenseRowSkeleton } from "@/components/skeletons";
 import { formatCurrency } from "@/lib/format";
@@ -114,7 +114,7 @@ export default function ExpensesPage() {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <ExportButton expenses={filteredExpenses} />
+          <ExportTriggerButton expenses={expenses} />
           <button
             type="button"
             onClick={openAddForm}
